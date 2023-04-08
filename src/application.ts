@@ -36,8 +36,10 @@ export default class Application {
 
                 Application.tickets[username] = Number(total);
 
-                if (previous !== 0) console.log(`@${username} is in with ${tickets} more tickets (${total} total)`);
-                else console.log(`@${username} is in with ${tickets} tickets`);
+                let s = !(tickets === 1);
+
+                if (previous !== 0) console.log(`@${username} is in with ${tickets} more ticket${s ? "s" : ""} (${total} total)`);
+                else console.log(`@${username} is in with ${tickets} ticket${s ? "s" : ""}`);
 
                 Application.recalculate();
 
